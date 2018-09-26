@@ -10,9 +10,14 @@ export class AppComponent implements OnInit {
   title = 'app';
   step = 0;
 
-  ngOnInit() {}
+  ngOnInit() {
+    setInterval(_ => {
+      this.btnNext();
+    }, 5000);
+  }
 
   btnNext() {
+    console.log('DOR');
     const boxes = document.getElementsByClassName('boxes') as any;
     const box = document.getElementsByClassName('box');
     const background = document.getElementsByClassName('container') as any;
@@ -49,6 +54,6 @@ export class AppComponent implements OnInit {
       this.step = 0;
     }
 
-    console.log(text);
+    // console.log(text);
   }
 }
