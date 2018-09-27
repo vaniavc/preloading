@@ -1,19 +1,25 @@
-<div class="container">
+<div class="container ">
+    <div style="position: absolute;top:0;left:0;width:100%;height:100%; z-index: 0;">
+        <div class="bg background-1 show"></div>
+        <div class="bg background-2"></div>
+        <div class="bg background-3"></div>
+    </div>
     <div class="carousel-wrapper">
         <div class="boxes">
             <div class="box show">
-                <img src="../assets//images/preloadimg_01.png">
+                <img src="../assets/images/preloadimg_01.png">
             </div>
             <div class="box">
-                <img src="../assets//images/preloadimg_02.png">
+                <img src="../assets/images/preloadimg_02.png">
             </div>
             <div class="box">
-                <img src="../assets//images/preloadimg_03.png">
+                <img src="../assets/images/preloadimg_03.png">
+
             </div>
         </div>
-        <div class="text">
+        <div class="text fadeout">
             Kami sedang mengecek data anda, silahkan menunggu ...
         </div>
     </div>
-    <button (click)="btnNext()" hidden>next</button>
+    <!-- <button (click)="next()" hidden>NEXT</button> -->
 </div>

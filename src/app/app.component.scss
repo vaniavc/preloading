@@ -1,64 +1,110 @@
 .container {
   position: relative;
-  // background-color: sandybrown;
-  background-image: linear-gradient(to right, #43cda3, #569bdd);
-  transition: fadein 1s ease;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  &.show {
+    opacity: 1;
+  }
+}
+.background-1 {
+  background-image: linear-gradient(
+    to right,
+    rgb(87, 155, 219),
+    rgb(77, 179, 192),
+    rgb(86, 155, 219)
+  );
+}
+
+.background-2 {
+  background-image: linear-gradient(
+    to right,
+    rgb(56, 206, 221),
+    rgb(74, 167, 222),
+    rgb(86, 130, 220)
+  );
+}
+
+.background-3 {
+  background-image: linear-gradient(
+    to right,
+    rgb(140, 85, 233),
+    rgb(98, 105, 231),
+    rgb(71, 117, 231)
+  );
+}
+
 .carousel-wrapper {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  min-width: 0px;
+  max-width: 300px;
+  max-height: 300px;
   margin: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  // background-color: salmon;
-}
-
-.boxes {
-  transition: left 1s ease;
-  left: 75%;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: sans-serif;
-  font-family: 14px;
-  letter-spacing: 1px;
-  // background-color: salmon;
-}
-
-.box {
-  transform: scale(1);
-  transition: transform 1s ease;
-  margin: 50px;
-  opacity: 0.5;
-  &.show {
-    transform: scale(1.5);
-    opacity: 1;
+  // border: 5px solid black;
+  .boxes {
+    left: 0%;
+    transition: left 1s ease;
+    width: 300%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // border: 1px solid red;
+    .box {
+      transform: scale(1);
+      transition: transform 1s ease;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 50px;
+      opacity: 0.5;
+      // border: 1px solid yellow;
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: 'auto';
+      }
+      &.show {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+    }
+  }
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    font-family: 14px;
+    letter-spacing: 1px;
+    margin: 10px;
+    text-align: center;
   }
 }
 
 .fadein {
-  animation: fadein 1s;
+  opacity: 1;
+  animation: fadein 1s ease;
 }
 
 .fadeout {
-  animation: fadeout 1s;
+  opacity: 1;
+  animation: fadeout 1s ease;
 }
 
 @keyframes fadein {
@@ -71,10 +117,22 @@
 }
 
 @keyframes fadeout {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  //   50% {
+  //     opacity: 0;
+  //   }
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
